@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Game Simulasi Interaktif</title>
+    <link rel="stylesheet" href="styles.css"> <style>
+        /* CSS yang disematkan untuk kesederhanaan, sebaiknya dipisah ke styles.css */
+        body {
+            font-family: sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .game-container {
+            background-color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 204, 0, 0.4);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        h1 {
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+
+        .info-panel {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #222;
+            border-radius: 8px;
+        }
+        
+        .info-panel span {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .slot-reels {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .reel {
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            border: 5px solid #e74c3c; /* Merah menyala */
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: #ffcc00;
+            overflow: hidden; /* Penting untuk animasi putaran */
+        }
+        
+        .message {
+            margin-top: 20px;
+            font-size: 1.3em;
+            color: #7dff7d;
+        }
+
+        button {
+            padding: 10px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #2ecc71; /* Hijau */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        button:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>Simulasi Slot 🎰</h1>
+        <p>Proyek Pembelajaran Interaktif (Hadiah Bohongan)</p>
+
+        <div class="info-panel">
+            <span>Saldo: <span id="balance">100</span></span>
+            <span>Taruhan: <span id="betAmount">10</span></span>
+        </div>
+
+        <div class="slot-reels">
+            <div class="reel" id="reel1">❓</div>
+            <div class="reel" id="reel2">❓</div>
+            <div class="reel" id="reel3">❓</div>
+        </div>
+
+        <button id="spinButton">PUTAR! (Biaya 10)</button>
+
+        <div class="message" id="gameMessage">
+            Selamat datang! Saldo awal 100.
+        </div>
+
+    </div>
+
+    <script src="slot-logic.js"></script> 
+</body>
+</html>
